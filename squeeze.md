@@ -77,6 +77,10 @@ class String
 end
 ```
 
+```Ruby
+'aaabbbaaa'.chars.chunk { |c| c == 'a' }.map { |r, cs| r ? cs.first : cs }.join
+```
+
 # C++による回答
 
 ```C++
