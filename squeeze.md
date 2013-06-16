@@ -76,3 +76,34 @@ class String
   end
 end
 ```
+
+# C++による回答
+
+```
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string squeeze(string str, char c) {
+  string ret;
+  bool f = false;
+  for (size_t i = 0; i < str.size(); ++i) {
+    if (str[i] == c) {
+      if (!f) {
+        f = true;
+        ret += str[i];
+      }
+    } else{
+      f = false;
+      ret += str[i];
+    }
+  }
+  return ret;
+}
+
+int main() {
+  cout << squeeze("aaabbbaababa", 'a') << endl;
+  return 0;
+}
+```
