@@ -57,9 +57,7 @@ class String
     now = false
     0.upto(self.size-1) do |i|
       if self[i] == c
-        if now
-          next
-        else
+        unless now
           s << self[i]
           now = true
         end
