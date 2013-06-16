@@ -107,3 +107,19 @@ int main() {
   return 0;
 }
 ```
+
+# Pythonによる回答
+
+```Python
+def squeeze(s, a):
+    ret = ''
+    flg = False
+    for i in s:
+        if i != a:
+            ret += i
+            flg = False
+        elif not flg:
+            ret += i
+            flg = True
+    return ret
+```
