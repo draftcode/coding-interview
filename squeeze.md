@@ -79,7 +79,7 @@ end
 
 # C++による回答
 
-```
+```C++
 #include <iostream>
 #include <string>
 
