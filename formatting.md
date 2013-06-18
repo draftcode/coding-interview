@@ -47,14 +47,17 @@ var format = function(str,column){
   var line = "";
   while(strs.length>0){
     if(line.length+strs[0].length>column){
-      output += line + "\n";
+      output += line.replace(/ *$/,"") + "\n";
       line = "";
     }
     line += strs.shift();
+    if(line==" "){
+      line = "";
+    }
   }
   output += line;
   return output;
 };
 
-format("hoge fuga hogehoge fugafuga",10);//"hoge fuga \nhogehoge \nfugafuga"
+format("hoge fuga  hogehoge   fugafuga",10);//"hoge fuga\nhogehoge\nfugafuga"
 ```
