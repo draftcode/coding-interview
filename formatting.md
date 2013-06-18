@@ -41,17 +41,17 @@ void format(const char *paragraph, int columns) {
 # JavaScriptによる回答
 
 ```JavaScript
-var format = function(str,column){
+var format = function (str, column) {
   var strs = str.split(/( )/);
   var output = "";
-  var line = "";
-  while(strs.length>0){
-    if(line.length+strs[0].length>column){
-      output += line.replace(/ *$/,"") + "\n";
+  var line = strs.length > 0 ? strs.shift() : "";
+  while (strs.length > 0) {
+    if (line.length + strs[0].length > column) {
+      output += line.replace(/ *$/, "") + "\n";
       line = "";
     }
     line += strs.shift();
-    if(line==" "){
+    if (line === " ") {
       line = "";
     }
   }
@@ -59,5 +59,5 @@ var format = function(str,column){
   return output;
 };
 
-format("hoge fuga  hogehoge   fugafuga",10);//"hoge fuga\nhogehoge\nfugafuga"
+format("hoge fuga  hogehoge   fugafuga", 10);//"hoge fuga\nhogehoge\nfugafuga"
 ```
